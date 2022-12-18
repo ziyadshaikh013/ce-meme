@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "HTML Hackers",
+  "description": "We will hack your webpage",
+  "version": "1.0",
+  "icons": {
+    "16": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": "assets/icon.png",
+    "default_title": "HTML Hackers"
+  },
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options/index.html",
+  "permissions": ["tabs", "storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "all_frames": false,
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

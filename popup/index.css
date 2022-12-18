@@ -1,0 +1,21 @@
+body {
+  height: 600px;
+  width: 400px;
+}
+
+body > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+body > div > button {
+  font-size: 28px;
+}
+
+#meme-image {
+  margin-bottom: 24px;
+  width: 100%;
+  height: auto;
+}
